@@ -1,8 +1,9 @@
 # path tools
 import os
+import  numpy as np
+import pandas as pd
+import cv2
 
-# data loader
-from tensorflow.keras.datasets import cifar10
 
 # machine learning tools
 from sklearn.preprocessing import LabelBinarizer
@@ -15,3 +16,8 @@ from sklearn.neural_network import MLPClassifier
 
 (X_train, y_train), (X_test, y_test) = cifar10.load_data()
 
+# load data
+from tensorflow.keras.datasets import cifar10
+# process data
+
+# save data
