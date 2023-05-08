@@ -1,19 +1,18 @@
-#!/usr/bin/env bash
-#install venv on UCloud:
+#!/usr/bin/env python3
+# Install venv on UCloud:
 sudo apt-get update
 sudo apt-get install python3-venv
-#create virtual environment
+
+# Create virtual environment
 python3 -m venv spacy_env
-# activate virtual environment
+
+# Activate virtual environment (only if running the script directly with Python)
 source ./spacy_env/bin/activate
 
-# then install requirements
-python 3 -m pip install ---upgrade pip
+# Install requirements
+python3 -m pip install --upgrade pip
 python3 -m pip install -r requirements.txt
-python3 spacy download en_core_web_md
+python3 -m spacy download en_core_web_md
 
-#run
-python3 src/script.py
-
-# deactivate the venv
-deactivate
+# Run your Python script
+python3 src/logi_reg_cifar10.py
