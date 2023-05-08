@@ -7,9 +7,10 @@ import pandas as pd
 import numpy as np
 import cv2
 # importing Ross' classifier utils
-import utils.classifier_utils as clf
-# data loader
-from tensorflow.keras.datasets import cifar10
+import utils.classifier_utils as clfimport  numpy as np
+import pandas as pd
+import cv2
+
 
 # machine learning tools
 from sklearn.preprocessing import LabelBinarizer
@@ -74,15 +75,3 @@ def main():
     #Train model
     y_pred, clf = train_model(y_train, X_test_dataset, y_test)
 
-    #Save classification report
-    report = metrics.classifier_report(y_test, y_pred)
-    with open('classification_report.txt', 'w') as f:
-        f.write(classifier_metrics)
-    # save the trained models and vectorizers
-    from joblib import dump, load
-    # save the model
-    dump(classifier, os.path.join("out", "logi_reg_model.joblib"))
-
-# calling main function
-if __name__== "__main__":
-    main()
