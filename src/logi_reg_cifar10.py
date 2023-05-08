@@ -1,15 +1,12 @@
+#!/usr/bin/env python3
 # path tools
 import os
 import sys
-sys.path.append(".")
-import joblib
 import pandas as pd
 import numpy as np
 import cv2
 # importing Ross' classifier utils
-import utils.classifier_utils as clfimport  numpy as np
-import pandas as pd
-import cv2
+import utils.classifier_utils as clfimport
 
 # data loader
 from tensorflow.keras.datasets import cifar10
@@ -33,16 +30,7 @@ parser = argparse.ArgumentParser(description='logistic regression model')
 def load_data():
     (X_train, y_train), (X_test, y_test) = cifar10.load_data()
     # making labels, since dataset does not contain premade labels
-    labels = ["airplane",
-              "automobile", 
-              "bird", 
-              "cat", 
-              "deer", 
-              "dog", 
-              "frog", 
-              "horse", 
-              "ship", 
-              "truck"]
+    
     # convert data to greyscale
     X_train_grey = np.array([cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) for image in X_train])
     X_test_grey = np.array([cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) for image in X_test])
@@ -57,7 +45,7 @@ def load_data():
     return X_train_dataset, X_test_dataset, y_train, y_test
 
 # train classifier
-def train_model(y_train,X_test_dataset, y_test,):
+def train_model(X_train_dataset, X_test_dataset, y_train, y_test):
     clf = LogisticRegression(penalty="none",
                             tol=0.1,
                             verbose=True,
@@ -67,7 +55,17 @@ def train_model(y_train,X_test_dataset, y_test,):
     return y_pred, clf
 # save classification report
 def classifier_report(y_test, y_pred):
-    report = metrics.classification_report(y_test, y_pred, target_names=labels)
+    labels = ["airplane",
+              "automobile", 
+              "bird", 
+              "cat", 
+              "deer", 
+              "dog", 
+              "frog", 
+              "horse", 
+              "ship", 
+              "truck"]
+    report = classification_report(y_test, y_pred, target_names=labels)
     return report
 
 # main function
@@ -75,5 +73,13 @@ def main():
     #load data
     X_train_dataset, X_test_dataset, y_train, y_test = load_data()
     #Train model
-    y_pred, clf = train_model(y_train, X_test_dataset, y_test)
+    y_pred, clf = train_model(X_train_dataset, X_test_dataset, y_train, y_test)
+    # save model
+     #Saving classification report
+    classifier_metrics = classifier_report(y_test, y_pred)
+    with open(os.path.join("out","classification_report.txt"), 'w') as f:
+        f.write(classifier_metrics)
 
+# calling main function
+if __name__== "__main__":
+    main()
