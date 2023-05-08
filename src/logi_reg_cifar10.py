@@ -11,6 +11,8 @@ import utils.classifier_utils as clfimport  numpy as np
 import pandas as pd
 import cv2
 
+# data loader
+from tensorflow.keras.datasets import cifar10
 
 # machine learning tools
 from sklearn.preprocessing import LabelBinarizer
