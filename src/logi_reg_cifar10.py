@@ -18,7 +18,6 @@ from sklearn.metrics import classification_report
 
 # classification models
 from sklearn.linear_model import LogisticRegression
-from sklearn.neural_network import MLPClassifier
 # importing argument parser
 import argparse
 from argparse import ArgumentParser
@@ -45,7 +44,7 @@ def load_data():
     return X_train_dataset, X_test_dataset, y_train, y_test
 
 # train classifier
-def train_model(X_train_dataset, X_test_dataset, y_train, y_test):
+def train_model(X_train_dataset, X_test_dataset, y_train):
     clf = LogisticRegression(penalty="none",
                             tol=0.1,
                             verbose=True,
@@ -53,6 +52,8 @@ def train_model(X_train_dataset, X_test_dataset, y_train, y_test):
                             multi_class="multinomial").fit(X_train_dataset, y_train)
     y_pred = clf.predict(X_test_dataset)
     return y_pred, clf
+
+
 # save classification report
 def classifier_report(y_test, y_pred):
     labels = ["airplane",
