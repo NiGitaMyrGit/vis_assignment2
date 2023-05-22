@@ -22,3 +22,8 @@ You should write one script which does this for a logistic regression classifier
 - To ensure that you can use ```scikit-learn``` to build simple benchmark classifiers on image classification data
 - To demonstrate that you can build reproducible pipelines for machine learning projects
 - To make sure that you can structure repos appropriately
+
+argparse:
+For this asignment I have used argparse so the user can customise the 
+python neural_cifar10.py -r custom/path/to/report.txt
+the default path is default='out/neuralnetwork_report.txt'
