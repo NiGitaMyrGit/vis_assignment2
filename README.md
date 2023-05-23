@@ -34,8 +34,8 @@ You should write one script which does this for a logistic regression classifier
 This script was made using python 3.10.7, make sure this is your python version you run the script in. 
 ### 4.1 Installing packages
 From the command line:
-Clone this repository to your console by running the command `git clone https://github.com/NiGitaMyrGit/vis_assignment1.git`. This will copy the repository to the location you are currently in.
-Then make sure you are located in the main folder, location can be changed by using the command `cd path\to\vis_assignment1`'. From here run the command `bash setup.sh` which will install all the required packages in order to run the script.
+Clone this repository to your console by running the command `git clone https://github.com/NiGitaMyrGit/vis_assignment2.git`. This will copy the repository to the location you are currently in.
+Then make sure you are located in the main folder, location can be changed by using the command `cd path\to\vis_assignment2`'. From here run the command `bash setup.sh` which will install all the required packages in order to run the script.
 
 ### 4.2 Dataset
 This scritp uses the ```Cifar10``` dataset which is directly loaded into the script.
