@@ -48,5 +48,5 @@ Eg.
 `python3 logireg_cifar10.py -r custom/path/to/report.txt` or `python3 neural_cifar10.py -r custom/path/to/report.txt`
 The default path is default='out/neuralnetwork_report.txt' which means the classification
 ## 5. Results - discussion
-The accuracy of the logistic regression is 0.31 and 0.35 for the neural network. This is not overwhelmingly good results, 
+The accuracy of the logistic regression is 0.31 and 0.35 for the neural network. This is not overwhelmingly good results. With longer training time and perhaps some data augmentation it might do better.
  
