@@ -1,7 +1,7 @@
 numpy==1.23.0
-pandas==2.0.1
 matplotlib==3.7.0
 scikit-learn==1.2.2
 tensorflow-cpu==2.12.0
 seaborn==0.12.2
 opencv-python-headless==4.7.0.72
+tensorflow ==2.12.0
