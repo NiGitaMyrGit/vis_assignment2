@@ -40,10 +40,13 @@ Then make sure you are located in the main folder, location can be changed by us
 ### 4.2 Dataset
 This scritp uses the ```Cifar10``` dataset which is directly loaded into the script.
 
-### 4.3 customisation argparse:
-For this asignment I have used argparse so the user can customise the 
-python neural_cifar10.py -r custom/path/to/report.txt
-the default path is default='out/neuralnetwork_report.txt'
+### 4.3 running the scripts
+In the command line make sure you are located in the main folder.
+Run the command `python3 src/logireg_cifar10.py` for running the ligistic regression script and `python3 src/neural_cifar10.py`
+For this asignment I have used argparse so the user can customise the output path of the classification reports with the flag -r.
+Eg.
+`python3 logireg_cifar10.py -r custom/path/to/report.txt` or `python3 neural_cifar10.py -r custom/path/to/report.txt`
+The default path is default='out/neuralnetwork_report.txt' which means the classification
 ## 5. Results - discussion
 The accuracy of the logistic regression is 0.31 and 0.35 for the neural network. This is not overwhelmingly good results, 
  
